@@ -57,3 +57,5 @@ events: {
     }
 }
 ```
+
+- 為了點擊圖示時可順利將圖示加入輸入框，要將套件中的 pasteHtmlAtCaret 的 function 複製一份
