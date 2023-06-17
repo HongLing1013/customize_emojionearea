@@ -1,4 +1,5 @@
 # customize_emojionearea
+<img src="image/customize_emoji.jpg" width="400" >
 
 EmojiOneArea 是一個開源的JQuery的插件，他可以讓你在輸入框中輕鬆地插入使用 emoji 
 
