@@ -12,8 +12,35 @@
     <textarea id="emoji"></textarea>
     <script type="text/javascript">
         $(document).ready(function() {
-            $("#emoji").emojioneArea();
+            $("#emoji").emojioneArea({
+                events: {
+                    ready: function () {
+                        $('.emojionearea-category[name="recent"]').before(
+                            '<div class="emojionearea-category" name="mitao_cat" data-tone="0">'+
+                                '<div class="emojionearea-category-title">蜜桃貓</div>'+
+                                '<i class="emojibtn" role="button" data-name=":mitao_angry:" title="Mitao Angry">'+
+                                    '<img class="emojioneemoji" src="/image/angry.png">'+
+                                '</i>'+
+                                '<i class="emojibtn" role="button" data-name=":mitao_cute:" title="Mitao Cute">'+
+                                    '<img class="emojioneemoji" src="/image/cute.png">'+
+                                '</i>'+
+                                '<i class="emojibtn" role="button" data-name=":mitao_fat:" title="Mitao Fat">'+
+                                    '<img class="emojioneemoji" src="/image/fat.png">'+
+                                '</i>'+
+                                '<i class="emojibtn" role="button" data-name=":mitao_love:" title="Mitao Love">'+
+                                    '<img class="emojioneemoji" src="/image/love.png">'+
+                                '</i>'+
+                            '</div>');
+                        $('.emojionearea-category[name="mitao_cat"] i').each(function () {
+                            $(this).on('click', function() {
+                                pasteHtmlAtCaret('<img alt="'+$(this).data("name")+'" class="emojioneemoji" src="'+$(this).find('img').attr("src")+'">');
+                            });
+                        });
+                    }
+                }
+            });
         });
+
     </script>
     <script type="text/javascript" src="vendor/mervick/emojionearea/dist/emojionearea.min.js"></script>
 </body>

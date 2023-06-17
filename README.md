@@ -30,3 +30,30 @@ https://github.com/mervick/emojionearea
   });
 </script>
 ```
+
+## 自定義emoji
+
+- 使用 before 的方式，讓圖片可顯示在 Emoji 面板區域
+
+```js
+events: {
+    ready: function () {
+        $('.emojionearea-category[name="recent"]').before(
+            '<div class="emojionearea-category" name="區塊名稱" data-tone="0">'+
+                '<div class="emojionearea-category-title">區塊標題 1</div>'+
+                '<i class="emojibtn" role="button" data-name=":圖案名稱 1:" title="圖案標題 1">'+
+                    '<img class="emojioneemoji" src="圖片路徑 1">'+
+                '</i>'+
+                '<div class="emojionearea-category-title">區塊標題 2</div>'+
+                '<i class="emojibtn" role="button" data-name=":圖案名稱 2:" title="圖案標題 2">'+
+                    '<img class="emojioneemoji" src="圖片路徑 2">'+
+                '</i>'+
+            '</div>');
+        $('.emojionearea-category[name="區塊名稱"] i').each(function () {
+            $(this).on('click', function() {
+                pasteHtmlAtCaret('<img alt="'+$(this).data("name")+'" class="emojioneemoji" src="'+$(this).find('img').attr("src")+'">');
+            });
+        });
+    }
+}
+```
