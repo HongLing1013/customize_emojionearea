@@ -1267,7 +1267,7 @@ document = window.document || {};
         })
 
         .on("@source.change", function() {
-            self.setText(source[sourceValFunc]());
+            // self.setText(source[sourceValFunc]());
             trigger('change');
         })
 

@@ -59,3 +59,11 @@ events: {
 ```
 
 - 為了點擊圖示時可順利將圖示加入輸入框，要將套件中的 pasteHtmlAtCaret 的 function 複製一份
+
+- 點選面板的自定義 emoji 圖示，輸入匡沒正常顯示圖示，只出現 ```:圖案名稱:```的解決方式是註解套件 js 的這一行
+```js
+.on("@source.change", function() {
+    // self.setText(source[sourceValFunc]()); // 註解這行就可正常顯示圖示
+    trigger('change');
+})
+```
