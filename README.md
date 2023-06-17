@@ -17,5 +17,16 @@ https://github.com/mervick/emojionearea
 ```html
 <link rel="stylesheet" href="file/to/path/css/emojionearea.min.css">
 <script type="text/javascript" src="file/to/path/js/emojionearea.min.js"></script>
+<script type="text/javascript" src="file/to/path/js/jquery.min.js"></script>
 ```
 
+簡單的範例
+
+```html
+<textarea id="example1"></textarea>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("#example1").emojioneArea();
+  });
+</script>
+```
